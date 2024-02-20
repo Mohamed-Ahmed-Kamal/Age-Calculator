@@ -46,7 +46,8 @@
   }
 }
 .input__container label {
-  color: var(--color-gray);
+  font-weight: 700;
+  color: var(--color-purple);
   font-size: 18px;
 }
 .card__input {
