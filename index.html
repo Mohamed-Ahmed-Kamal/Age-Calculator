@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./style/main.css" />
+    <title>Age Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <form class="card__form">
+          <div class="input__container">
+            <label for="day">Day</label>
+            <input
+              type="number"
+              class="card__input"
+              id="day"
+              name="day"
+              placeholder="DD"
+              min="0"
+              max="31"
+            />
+            <span class="input__error day__valid not__valid"
+              >Must be a valid day</span
+            >
+          </div>
+          <div class="input__container">
+            <label for="month">Month</label>
+            <input
+              type="number"
+              class="card__input"
+              id="month"
+              name="month"
+              placeholder="MM"
+              min="0"
+              max="12"
+            />
+            <span class="input__error month__valid">Must be a valid month</span>
+          </div>
+
+          <div class="input__container">
+            <label for="year">Year</label>
+            <input
+              type="number"
+              class="card__input"
+              id="year"
+              name="year"
+              placeholder="YYYY"
+              min="0"
+            />
+            <span class="input__error year__valid">Must be a valid year</span>
+          </div>
+        </form>
+        <div class="card__supmit">
+          <button id="Calculate__btn" class="Calculate__btn">Calculate</button>
+        </div>
+        <div class="card__output">
+          <span class="result__label">You Are</span>
+          <span class="result__value result__year">--</span>
+          <span class="result__label">Years Old</span>
+        </div>
+      </div>
+    </div>
+    <script src="./Script/main.js"></script>
+  </body>
+</html>

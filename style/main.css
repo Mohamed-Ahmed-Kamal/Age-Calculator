@@ -1,0 +1,114 @@
+:root {
+  --color-bg: #f0f0f0;
+  --color-purple: #864cff;
+  --color-light-gray: #dbdbdbff;
+  --color-gray: #8a8a8a;
+  --color-black: #151515;
+  --color-white: #ffffff;
+  --color-red: #ff5757ff;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+.card {
+  background-color: var(--color-white);
+  padding: 25px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 6px;
+}
+.card__form {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 350px) {
+  .card__form {
+    flex-direction: column;
+  }
+}
+.input__container label {
+  color: var(--color-gray);
+  font-size: 18px;
+}
+.card__input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.5s;
+  margin: 5px 0;
+}
+.input__container span {
+  position: relative;
+  left: -100%;
+  font-size: 10px;
+  transition: 0.5s;
+  color: red;
+}
+.input__container {
+  overflow: hidden;
+}
+.card__supmit {
+  position: relative;
+}
+.Calculate__btn {
+  padding: 10px 20px;
+  color: var(--color-white);
+  background: var(--color-purple);
+  outline: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 40px auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.card__supmit::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: #8a8a8a3d;
+  top: 50%;
+  width: 100%;
+  left: 0;
+}
+.card__output {
+  width: 100%;
+  text-align: center;
+}
+.result__label {
+  font-size: 25px;
+  font-weight: 800;
+}
+.result__value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-purple);
+}
