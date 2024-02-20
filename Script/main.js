@@ -1,12 +1,14 @@
-const btn = document.getElementById("Calculate__btn");
+const Calculate__btn = document.getElementById("Calculate__btn");
 const outputYear = document.querySelector(".result__year");
 const inputDay = document.getElementById("day");
 const inputMonth = document.getElementById("month");
 const inputYear = document.getElementById("year");
 
-const daySpan = document.querySelector(".day__valid");
-const monthSpan = document.querySelector(".month__valid");
-const yearSpan = document.querySelector(".year__valid");
+const dayError = document.querySelector(".day__valid");
+const monthError = document.querySelector(".month__valid");
+const yearError = document.querySelector(".year__valid");
+
+
 const calcolateAge = (year, month, day) => {
   const currentDate = new Date();
   const birthDate = new Date(year, month - 1, day);
@@ -36,23 +38,23 @@ const onBtnClick = () => {
 
 const isDayValeuValid = () => {
   if (inputDay.value > 31 || inputDay.value <= 0 || inputDay === "") {
-    daySpan.style.left = "0";
+    dayError.style.left = "0";
     inputDay.style.border = "1px solid red";
     outputYear.innerHTML = "--";
   } else {
     inputDay.style.border = "1px solid var(--color-light-gray)";
-    daySpan.style.left = "-100%";
+    dayError.style.left = "-100%";
   }
 };
 
 const isMonthValeuValid = () => {
   if (inputMonth.value > 12 || inputMonth.value <= 0 || inputMonth === "") {
-    monthSpan.style.left = "0";
+    monthError.style.left = "0";
     inputMonth.style.border = "1px solid red";
     outputYear.innerHTML = "--";
   } else {
     inputMonth.style.border = "1px solid var(--color-light-gray)";
-    monthSpan.style.left = "-100%";
+    monthError.style.left = "-100%";
   }
 };
 
@@ -62,17 +64,17 @@ const isYearValeuValid = () => {
     inputYear.value == 0 ||
     inputYear === ""
   ) {
-    yearSpan.style.left = "0";
+    yearError.style.left = "0";
     inputYear.style.border = "1px solid red";
     outputYear.innerHTML = "--";
   } else {
     inputYear.style.border = "1px solid var(--color-light-gray)";
-    yearSpan.style.left = "-100%";
+    yearError.style.left = "-100%";
   }
 };
 
-const inputs = document.querySelectorAll(".card__input");
-inputs.forEach((item) => {
+const inputsElemnts = document.querySelectorAll(".card__input");
+inputsElemnts.forEach((item) => {
   item.addEventListener("keydown",(event) => event.key === "Enter" && onBtnClick());});
 
-btn.addEventListener("click", onBtnClick);
+  Calculate__btn.addEventListener("click", onBtnClick);
